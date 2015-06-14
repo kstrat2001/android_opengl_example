@@ -2,6 +2,8 @@
 
 You'll build a full-screen app with two animated views that simply host pixel shaders, directly rendering every pixel on the screen. These views involve rendering several spheres.
 
+Note: Much of this document refers to iOS/Apple libraries because the [original challenge](https://github.com/kstrat2001/opengl_example) was originally only on iOS.
+
 ## Part 1:
 
 Build a full-screen OpenGL ES view using OpenGL ES 2.0 or 3.0, your choice. In the interest of time you may use platform-level conveniences like Apple's GLKView to build the view, but you'll get bonus points if you build it yourself using OpenGL ES API calls directly. Further bonus points are available if you make the view dynamically determine the availability of OpenGL ES and use 3.0 if present, 2.0 otherwise. The view should not rotate with the device. It can be limited to the phone form factor for simplicity.
@@ -34,10 +36,9 @@ Add a second full-screen pixel shader view like the one above (probably an insta
 
 ## *Some notes about the final result:*
 
-- Multisampling will be enabled only if an OpenGL ES 3 context is successfully created.  This could be changed to work for ES2 and ES1 as well with more work.
+- There is no multisampling enabled in the Android version and context creation is done using their libraries
 - The drawables load their resources individually.  This is not the most efficient and could be redone using managers for resources like models, textures, shaders, etc.
-- I only used GLKit for math and texture loading.  GLKit dependence could be removed completely if a cross platform math library and texture loader were implemented.
-- The texture could be compressed for some resource savings
-- More profiling could be done but I'm already spending a lot of time!
-- all in all this was a fun task!
+- I used the math libraries from Android for matrices.  Ideally I could use a C++ library and the NDK for cross platform compiles
+- Android version uses ETC compression!
+- It was interesting porting over to Android but what I'd really like to do is investigate the NDK and cross platform usage of C++ libs
 
