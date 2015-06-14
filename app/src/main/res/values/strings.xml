@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">droid_opengl_example</string>
+
+    <string name="title_section1">Textured</string>
+    <string name="title_section2">Blended</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
